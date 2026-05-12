@@ -25,12 +25,12 @@ export default function Vision() {
             <p className="text-slate-500 italic">Par Aïcha BELAIDOUNI — Mai 2026</p>
           </header>
 
-          <section className="space-y-6 text-lg leading-relaxed text-slate-300">
+          <section className="space-y-6 text-lg leading-relaxed text-slate-300 border-l-2 border-slate-800 pl-8">
             <h2 className="text-2xl font-bold text-white italic">La fin de l'IA "Cloud Public" pour les Experts</h2>
             <p>
               Le secret professionnel comptable (Art. 226-13 du Code Pénal) n'est pas négociable. Pourtant, chaque jour, des milliers de documents sensibles sont envoyés vers des serveurs outre-Atlantique sans aucune garantie souveraine.
             </p>
-            <div className="p-8 bg-slate-900 rounded-2xl border-l-4 border-sky-500 italic font-medium">
+            <div className="p-8 bg-slate-900/50 rounded-2xl italic font-medium text-sky-400 border border-sky-500/20">
               "L'IA ne doit pas être une fuite, elle doit être un coffre-fort."
             </div>
             <p>
@@ -38,25 +38,25 @@ export default function Vision() {
             </p>
           </section>
 
-          <section className="space-y-6 text-lg leading-relaxed text-slate-300">
-            <h2 className="text-2xl font-bold text-white italic">Les 3 Piliers de votre Asset de Croissance</h2>
+          <section className="space-y-6 text-lg leading-relaxed text-slate-300 pt-12">
+            <h2 className="text-2xl font-bold text-white italic tracking-tight">Vos Garanties Industrielles</h2>
             <ul className="space-y-8">
               <li className="flex gap-4">
-                <span className="text-sky-400 font-bold">01.</span>
+                <span className="text-sky-400 font-bold font-mono">01.</span>
                 <div>
                   <h3 className="text-white font-bold mb-2">Isolation Totale</h3>
                   <p className="text-base text-slate-400">Vos dossiers clients restent au repos sur vos serveurs certifiés. L'IA vient interroger la donnée localement via un tunnel sécurisé.</p>
                 </div>
               </li>
-              <li className="flex gap-4">
-                <span className="text-sky-400 font-bold">02.</span>
+              <li className="flex gap-4 border-t border-slate-900 pt-8">
+                <span className="text-sky-400 font-bold font-mono">02.</span>
                 <div>
                   <h3 className="text-white font-bold mb-2">Audit-Proof Automation</h3>
                   <p className="text-base text-slate-400">Le système est conçu pour la réforme 2026. Chaque anomalie détectée est sourcée, justifiée et prête pour la validation humaine.</p>
                 </div>
               </li>
-              <li className="flex gap-4">
-                <span className="text-sky-400 font-bold">03.</span>
+              <li className="flex gap-4 border-t border-slate-900 pt-8 pb-12">
+                <span className="text-sky-400 font-bold font-mono">03.</span>
                 <div>
                   <h3 className="text-white font-bold mb-2">ROI Opérationnel</h3>
                   <p className="text-base text-slate-400">Nos Digital Workers libèrent entre 30 et 50h de temps de saisie et révision par mois, par collaborateur.</p>
@@ -66,16 +66,23 @@ export default function Vision() {
           </section>
 
           <footer className="pt-20 border-t border-slate-900 text-center space-y-8">
-            <p className="text-xl text-white font-bold italic underline decoration-sky-500 underline-offset-8">Êtes-vous prêt pour le pas d'après ?</p>
-            <a href="/#waitlist" className="inline-block px-10 py-4 bg-white text-slate-950 rounded-xl font-bold hover:bg-sky-400 transition-all">
-              Réserver mon Audit de Châssis
-            </a>
+            <p className="text-2xl text-white font-bold italic tracking-tighter">Votre cabinet est prêt pour le niveau suivant ?</p>
+            
+            <div className="bg-slate-900 p-8 rounded-3xl border border-slate-800">
+                <p className="text-slate-400 mb-8 text-sm italic">Cliquez ci-dessous pour confirmer votre demande de démo privée. Aïcha BELAIDOUNI vous contactera personnellement pour l'étape de configuration.</p>
+                <button 
+                  onClick={() => alert('Demande de démo transmise ! Aïcha vous contactera sous peu.')}
+                  className="inline-block px-12 py-5 bg-white text-slate-950 rounded-2xl font-bold text-lg hover:bg-sky-400 hover:scale-105 transition-all shadow-2xl shadow-sky-500/20"
+                >
+                  Confirmer ma Demande de Démo
+                </button>
+            </div>
           </footer>
         </article>
       </main>
 
       <footer className="w-full p-12 border-t border-slate-900 bg-slate-950 text-[10px] text-slate-600 uppercase tracking-widest text-center">
-        Propriété Intelectuelle 3ADK Agency • 2026
+        Propriété Intellectuelle 3ADK Agency • 2026
       </footer>
     </div>
   );
