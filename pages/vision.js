@@ -10,27 +10,27 @@ export default function Vision() {
       </Head>
 
       <nav className="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-900">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center text-sm">
-          <div className="text-2xl font-bold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent italic tracking-tighter">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center text-sm text-[10px] font-bold uppercase tracking-widest">
+          <div className="text-2xl font-bold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent italic tracking-tighter normal-case">
             <a href="/">3ADK Agency</a>
           </div>
+          <a href="https://calendly.com/aichaboulidouni/demo-3adk" className="bg-sky-600 px-4 py-2 rounded-lg hover:bg-sky-500 transition-all">Prendre RDV</a>
         </div>
       </nav>
 
       <main className="flex-grow pt-32 pb-20 px-6">
-        <article className="max-w-3xl mx-auto space-y-12">
-          <header className="space-y-4">
-            <div className="text-sky-400 font-bold tracking-widest text-[10px] uppercase underline decoration-2 underline-offset-8">Confidentiel</div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tighter italic">Projection d'Intelligence en Zone Souveraine</h1>
-            <p className="text-slate-500 italic">Par Aïcha BELAIDOUNI — Mai 2026</p>
+        <article className="max-w-3xl mx-auto">
+          <header className="mb-16 border-b border-slate-900 pb-12">
+            <div className="text-sky-400 font-bold tracking-widest text-[10px] uppercase mb-4 underline decoration-2 underline-offset-8">Confidentiel — Document de Travail</div>
+            <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tighter italic mb-6">Projection d'Intelligence en Zone Souveraine</h1>
+            <p className="text-slate-500 italic">Par Aïcha BELAIDOUNI — Fondatrice 3ADK Agency</p>
           </header>
 
-          <section className="space-y-6 text-lg leading-relaxed text-slate-300 border-l-2 border-slate-800 pl-8">
-            <h2 className="text-2xl font-bold text-white italic">La fin de l'IA "Cloud Public" pour les Experts</h2>
+          <section className="space-y-8 text-lg leading-relaxed text-slate-300 mb-20">
             <p>
               Le secret professionnel comptable (Art. 226-13 du Code Pénal) n'est pas négociable. Pourtant, chaque jour, des milliers de documents sensibles sont envoyés vers des serveurs outre-Atlantique sans aucune garantie souveraine.
             </p>
-            <div className="p-8 bg-slate-900/50 rounded-2xl italic font-medium text-sky-400 border border-sky-500/20">
+            <div className="p-8 bg-slate-900/50 rounded-2xl italic font-medium text-sky-400 border border-sky-500/20 text-center">
               "L'IA ne doit pas être une fuite, elle doit être un coffre-fort."
             </div>
             <p>
@@ -38,51 +38,44 @@ export default function Vision() {
             </p>
           </section>
 
-          <section className="space-y-6 text-lg leading-relaxed text-slate-300 pt-12">
-            <h2 className="text-2xl font-bold text-white italic tracking-tight">Vos Garanties Industrielles</h2>
-            <ul className="space-y-8">
-              <li className="flex gap-4">
-                <span className="text-sky-400 font-bold font-mono">01.</span>
-                <div>
-                  <h3 className="text-white font-bold mb-2">Isolation Totale</h3>
-                  <p className="text-base text-slate-400">Vos dossiers clients restent au repos sur vos serveurs certifiés. L'IA vient interroger la donnée localement via un tunnel sécurisé.</p>
-                </div>
-              </li>
-              <li className="flex gap-4 border-t border-slate-900 pt-8">
-                <span className="text-sky-400 font-bold font-mono">02.</span>
-                <div>
-                  <h3 className="text-white font-bold mb-2">Audit-Proof Automation</h3>
-                  <p className="text-base text-slate-400">Le système est conçu pour la réforme 2026. Chaque anomalie détectée est sourcée, justifiée et prête pour la validation humaine.</p>
-                </div>
-              </li>
-              <li className="flex gap-4 border-t border-slate-900 pt-8 pb-12">
-                <span className="text-sky-400 font-bold font-mono">03.</span>
-                <div>
-                  <h3 className="text-white font-bold mb-2">ROI Opérationnel</h3>
-                  <p className="text-base text-slate-400">Nos Digital Workers libèrent entre 30 et 50h de temps de saisie et révision par mois, par collaborateur.</p>
-                </div>
-              </li>
-            </ul>
-          </section>
-
-          <footer className="pt-20 border-t border-slate-900 text-center space-y-8">
-            <p className="text-2xl text-white font-bold italic tracking-tighter">Votre cabinet est prêt pour le niveau suivant ?</p>
-            
-            <div className="bg-slate-900 p-8 rounded-3xl border border-slate-800">
-                <p className="text-slate-400 mb-8 text-sm italic">Cliquez ci-dessous pour confirmer votre demande de démo privée. Aïcha BELAIDOUNI vous contactera personnellement pour l'étape de configuration.</p>
-                <button 
-                  onClick={() => alert('Demande de démo transmise ! Aïcha vous contactera sous peu.')}
-                  className="inline-block px-12 py-5 bg-white text-slate-950 rounded-2xl font-bold text-lg hover:bg-sky-400 hover:scale-105 transition-all shadow-2xl shadow-sky-500/20"
+          {/* SECTION VALEUR AJOUTÉE */}
+          <div className="bg-gradient-to-br from-slate-900 to-slate-950 p-12 rounded-[2rem] border border-sky-500/30 shadow-2xl mb-20">
+             <h2 className="text-2xl font-bold text-white mb-6 italic tracking-tight">Accédez à votre Diagnostic Offert</h2>
+             <p className="text-slate-400 mb-8 leading-relaxed">
+               Nous avons préparé un guide complet de 6 pages détaillant les protocoles de conformité IA 2026. 
+               Ce document est la base de travail pour tout cabinet souhaitant sécuriser ses flux de données.
+             </p>
+             <div className="flex flex-col md:flex-row gap-4 items-center">
+                <a 
+                  href="/3ADK_Livre_Blanc_IA_Souveraine.pdf" 
+                  download
+                  className="w-full md:w-auto px-10 py-5 bg-white text-slate-950 rounded-2xl font-bold text-lg hover:bg-sky-400 transition-all flex items-center justify-center gap-3"
                 >
-                  Confirmer ma Demande de Démo
-                </button>
-            </div>
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                  Télécharger le Livre Blanc
+                </a>
+                <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Format PDF Professionnel</p>
+             </div>
+          </div>
+
+          <footer className="pt-20 border-t border-slate-900 text-center space-y-12">
+            <h3 className="text-3xl text-white font-bold italic tracking-tighter italic">Étude de compatibilité</h3>
+            <p className="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto">
+               L'intégration de 3ADK Vault nécessite un audit technique de 15 minutes. 
+               Vérifiez dès maintenant si votre infrastructure est prête pour l'IA souveraine.
+            </p>
+            <a 
+              href="https://calendly.com/aichaboulidouni/demo-3adk" 
+              className="inline-block px-12 py-5 bg-sky-600 text-white rounded-2xl font-bold text-xl hover:bg-sky-500 hover:scale-105 transition-all shadow-2xl shadow-sky-500/20"
+            >
+              Réserver mon Audit de Châssis (15 min)
+            </a>
           </footer>
         </article>
       </main>
 
       <footer className="w-full p-12 border-t border-slate-900 bg-slate-950 text-[10px] text-slate-600 uppercase tracking-widest text-center">
-        Propriété Intellectuelle 3ADK Agency • 2026
+        Propriété Intelectuelle 3ADK Agency • 2026
       </footer>
     </div>
   );
