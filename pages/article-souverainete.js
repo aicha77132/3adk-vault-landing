@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 export default function Article() {
-  const CALENDLY_URL = "https://calendly.com/aicha77132/30min";
+  const CALENDLY_URL = "https://calendly.com/aichabouterfas/30min";
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-sky-500/30 flex flex-col">
@@ -10,16 +10,16 @@ export default function Article() {
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
 
-      <nav className="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-900 px-6 py-4 flex justify-between items-center">
+      <nav className="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-900 px-6 py-4 flex justify-between items-center whitespace-nowrap overflow-x-hidden">
         <div className="text-xl font-bold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent italic shrink-0">
           <a href="/">3ADK Agency</a>
         </div>
-        <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="bg-sky-600 px-4 py-2 rounded-lg text-xs font-bold hover:bg-sky-500 shrink-0 text-white">Prendre RDV</a>
+        <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="bg-sky-600 px-4 py-2 rounded-lg text-xs font-bold hover:bg-sky-500 shrink-0 text-white">Audit compatible</a>
       </nav>
 
       <main className="flex-grow pt-32 pb-24 px-6 md:px-12 max-w-4xl mx-auto">
-        <div className="text-sky-500 font-mono text-[10px] tracking-widest uppercase mb-4">Livre Blanc • Diagnostic IA 2026</div>
-        <h1 className="text-5xl md:text-7xl font-black text-white italic tracking-tighter leading-tight mb-12">Le Châssis <br/>Souverain.</h1>
+        <div className="text-sky-500 font-mono text-[10px] tracking-widest uppercase mb-4 text-center md:text-left">Livre Blanc • Diagnostic IA 2026</div>
+        <h1 className="text-5xl md:text-7xl font-black text-white italic tracking-tighter leading-tight mb-12 text-center md:text-left text-white leading-none">Le Châssis <br/>Souverain.</h1>
         
         <div className="space-y-12 text-slate-400 leading-relaxed text-lg text-justify">
           <p className="border-l-4 border-sky-600 pl-6 italic text-xl text-white">
@@ -40,21 +40,21 @@ export default function Article() {
             </p>
             <ul className="space-y-4">
               <li className="flex gap-4">
-                <span className="text-sky-500 font-bold">✓</span> <strong className="text-slate-200">Zéro Donnée Sortante</strong> : Votre instance est isolée et étanche.
+                <span className="text-sky-500 font-bold font-mono">✓</span> <strong className="text-slate-200 uppercase tracking-tighter">Zéro Donnée Sortante</strong> : Votre instance est isolée et étanche.
               </li>
-              <li className="flex gap-4">
-                <span className="text-sky-500 font-bold">✓</span> <strong className="text-slate-200">Conformité PDP/PPF</strong> : Prêt pour la réforme 2026.
+              <li className="flex gap-4 border-t border-slate-800 pt-4">
+                <span className="text-sky-500 font-bold font-mono">✓</span> <strong className="text-slate-200 uppercase tracking-tighter">Conformité PDP/PPF</strong> : Prêt pour la réforme 2026.
               </li>
-              <li className="flex gap-4">
-                <span className="text-sky-500 font-bold">✓</span> <strong className="text-slate-200">ROI Industriel</strong> : Libérez 40h de révision / mois.
+              <li className="flex gap-4 border-t border-slate-800 pt-4">
+                <span className="text-sky-500 font-bold font-mono">✓</span> <strong className="text-slate-200 uppercase tracking-tighter text-white">ROI Industriel</strong> : Libérez 40h de révision / mois.
               </li>
             </ul>
           </section>
 
           <footer className="pt-20 text-center space-y-10">
-            <div className="h-[1px] w-full bg-slate-800 mb-12"></div>
-            <h3 className="text-3xl font-bold text-white italic tracking-tighter">Votre cabinet est-il prêt ?</h3>
-            <p className="text-slate-500 text-sm max-w-md mx-auto">Vérifiez la compatibilité technique de votre infrastructure avec nos Digital Workers en 15 minutes.</p>
+            <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-sky-500/30 to-transparent mb-12"></div>
+            <h3 className="text-3xl font-bold text-white italic tracking-tighter italic">Votre cabinet est-il prêt ?</h3>
+            <p className="text-slate-500 text-sm max-w-md mx-auto leading-relaxed">Vérifiez la compatibilité technique de votre infrastructure avec nos Digital Workers en 15 minutes.</p>
             <a 
               href={CALENDLY_URL} 
               target="_blank"
@@ -67,8 +67,8 @@ export default function Article() {
         </div>
       </main>
 
-      <footer className="bg-black py-16 px-6 text-center border-t border-slate-900">
-        <p className="text-[10px] text-slate-700 uppercase tracking-[0.3em] font-bold">3ADK Agency • Propriété Exclusive Aïcha BELAIDOUNI</p>
+      <footer className="bg-black py-16 px-6 text-center border-t border-slate-900 font-bold">
+        <p className="text-[10px] text-slate-700 uppercase tracking-[0.4em]">3ADK Agency • Propriété Exclusive Aïcha BELAIDOUNI</p>
       </footer>
     </div>
   );
