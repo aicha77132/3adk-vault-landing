@@ -11,14 +11,26 @@ export default function Landing() {
   const [email, setEmail] = useState('');
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setMessage('');
+    
     const { error } = await supabase.from('leads_vault').insert([{ email }]);
+    
     setLoading(false);
-    if (!error) setSent(true);
-    else alert("Erreur : " + error.message);
+    if (!error) {
+      setSent(true);
+    } else {
+      if (error.code === '23505') { // Code Supabase/Postgres pour duplication
+        setSent(true);
+        setMessage("Vous êtes déjà inscrit ! Nous revenons vers vous très vite.");
+      } else {
+        alert("Erreur : " + error.message);
+      }
+    }
   };
 
   return (
@@ -40,8 +52,7 @@ export default function Landing() {
       </nav>
 
       <main className="flex-grow pt-20">
-        {/* HERO SECTION */}
-        <section className="min-h-[80vh] flex flex-col items-center justify-center max-w-4xl mx-auto px-6 text-center">
+        <section id="waitlist" className="min-h-[80vh] flex flex-col items-center justify-center max-w-4xl mx-auto px-6 text-center">
           <div className="inline-block px-4 py-1.5 mb-8 text-[10px] font-bold tracking-[0.2em] text-sky-400 uppercase bg-sky-400/5 rounded-full border border-sky-400/20">
             Infrastructure IA Souveraine
           </div>
@@ -73,13 +84,16 @@ export default function Landing() {
             </form>
           ) : (
             <div className="bg-sky-500/10 border border-sky-400/20 rounded-2xl p-8 max-w-md mx-auto">
-              <p className="text-sky-400 font-bold mb-2 text-xl italic tracking-tighter">Requête enregistrée ✓</p>
-              <p className="text-sm text-slate-400">Aïcha BELAIDOUNI vous contactera sous 24h pour configurer votre accès souverain.</p>
+              <p className="text-sky-400 font-bold mb-2 text-xl italic tracking-tighter">
+                {message || "Requête enregistrée ✓"}
+              </p>
+              <p className="text-sm text-slate-400">
+                {message ? "" : "Aïcha BELAIDOUNI vous contactera sous 24h pour configurer votre accès souverain."}
+              </p>
             </div>
           )}
         </section>
 
-        {/* SECTION SOUVERAINETÉ */}
         <section id="souverainete" className="py-32 border-t border-slate-900 bg-slate-950 px-6">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-4xl font-bold text-white mb-8 italic tracking-tighter">Souveraineté des données</h2>
@@ -104,7 +118,6 @@ export default function Landing() {
           </div>
         </section>
 
-        {/* SECTION DIGITAL WORKERS */}
         <section id="workers" className="py-32 bg-slate-900/30 px-6 border-t border-slate-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-center text-4xl font-bold text-white mb-16 italic tracking-tighter">Vos nouveaux Workers Digitaux</h2>
@@ -124,7 +137,6 @@ export default function Landing() {
           </div>
         </section>
 
-        {/* SECTION VAULT */}
         <section id="vault" className="py-32 px-6 border-t border-slate-900">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-white mb-8 italic tracking-tighter underline decoration-sky-500/30">Architecture "Vault"</h2>
@@ -151,9 +163,6 @@ export default function Landing() {
             3ADK Vault est une solution propriétaire de 3ADK Agency (Aïcha BELAIDOUNI).<br/>
             Tout usage abusif des données collectées est proscrit. 
             L'utilisateur certifié reste l'unique maître de ses écritures.
-          </div>
-          <div className="flex gap-6">
-             <a href="#waitlist" className="text-sky-400 text-xs font-bold hover:underline">Accès Anticipé</a>
           </div>
         </div>
       </footer>
