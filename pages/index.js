@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
+import Head from 'next/head';
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -14,15 +15,20 @@ export default function Landing() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const { data, error } = await supabase.from('leads_vault').insert([{ email }]);
+    const { error } = await supabase.from('leads_vault').insert([{ email }]);
     setLoading(false);
     if (!error) setSent(true);
     else alert("Erreur : " + error.message);
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-sky-500/30">
-      <nav className="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center text-sm">
+    <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-sky-500/30 flex flex-col">
+      <Head>
+        <title>3ADK Vault | Infrastructure IA Souveraine</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+      </Head>
+
+      <nav className="max-w-7xl w-full mx-auto px-6 py-8 flex justify-between items-center text-sm">
         <div className="text-2xl font-bold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent italic tracking-tighter">3ADK Agency</div>
         <div className="hidden md:flex gap-8 text-slate-400 uppercase tracking-widest text-[10px] font-bold">
           <span>Souveraineté</span>
@@ -31,7 +37,7 @@ export default function Landing() {
         </div>
       </nav>
 
-      <main className="max-w-4xl mx-auto px-6 pt-24 pb-32 text-center">
+      <main className="flex-grow flex flex-col items-center justify-center max-w-4xl mx-auto px-6 text-center">
         <div className="inline-block px-4 py-1.5 mb-8 text-[10px] font-bold tracking-[0.2em] text-sky-400 uppercase bg-sky-400/5 rounded-full border border-sky-400/20">
           Infrastructure IA Souveraine
         </div>
@@ -44,13 +50,13 @@ export default function Landing() {
         </p>
 
         {!sent ? (
-          <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-3 justify-center max-w-md mx-auto">
+          <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-3 justify-center w-full max-w-md mx-auto">
             <input 
               type="email" 
               placeholder="votre@email-cabinet.fr" 
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="bg-slate-900 border border-slate-800 rounded-xl px-6 py-4 focus:outline-none focus:border-sky-500 flex-1 transition-all"
+              className="bg-slate-900 border border-slate-800 rounded-xl px-6 py-4 focus:outline-none focus:border-sky-500 flex-1 transition-all text-white"
               required
             />
             <button 
@@ -69,7 +75,7 @@ export default function Landing() {
         )}
       </main>
 
-      <footer className="fixed bottom-0 w-full p-8 border-t border-slate-900 bg-slate-950/80 backdrop-blur-md">
+      <footer className="w-full p-12 border-t border-slate-900 bg-slate-950/80 backdrop-blur-md">
         <p className="text-[10px] text-slate-600 text-center uppercase tracking-widest leading-relaxed">
           3ADK Vault est un outil de support opérationnel certifié par 3ADK Agency.<br/>
           L'utilisateur professionnel reste le seul responsable de la signature des comptes.
